@@ -7,7 +7,7 @@ builder.Services.AddControllersWithViews();
 
 
 //Hace que siempre sea instanciada cuando se pida en el constructor
-builder.Services.AddTransient<RepositorioProyectos>();
+builder.Services.AddTransient<IRepositorioProyectos, RepositorioProyectos>();
 
 var app = builder.Build();
 
