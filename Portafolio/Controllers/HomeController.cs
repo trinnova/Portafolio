@@ -9,11 +9,22 @@ namespace Portafolio.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IRepositorioProyectos repositorioProyectos;
+        private readonly ServicioDelimitado servicioDelimitado;
+        private readonly ServicioUnico servicioUnico;
+        private readonly ServicioTransitorio servicioTransitorio;
 
-        public HomeController(ILogger<HomeController> logger, IRepositorioProyectos repositorioProyectos)
+        public HomeController(ILogger<HomeController> logger, 
+            IRepositorioProyectos repositorioProyectos,
+            ServicioDelimitado servicioDelimitado,
+            ServicioUnico servicioUnico,
+            ServicioTransitorio servicioTransitorio
+            )
         {
             _logger = logger;
             this.repositorioProyectos = repositorioProyectos;
+            this.servicioDelimitado = servicioDelimitado;
+            this.servicioUnico = servicioUnico;
+            this.servicioTransitorio = servicioTransitorio;
         }
 
         // Acciones: son las funciones que se ejecutan cuando hacemos una petición http
@@ -21,7 +32,18 @@ namespace Portafolio.Controllers
         {            
             var proyectos = repositorioProyectos.ObtenerProyectos().Take(3).ToList();
 
-            var modelo = new HomeIndex() { Proyectos = proyectos };
+            var guidViewModel = new EjemploGUIDViewModel()
+            {
+                Delimitado = servicioDelimitado.ObtenerGuid,
+                Transitorio = servicioTransitorio.ObtenerGuid,
+                Unico = servicioUnico.ObtenerGuid
+            };
+
+            var modelo = new HomeIndex() 
+            { 
+                Proyectos = proyectos,
+                EjemploGUID_1 = guidViewModel
+            };
 
             //var persona = new Persona()
             //{

@@ -9,6 +9,10 @@ builder.Services.AddControllersWithViews();
 //Hace que siempre sea instanciada cuando se pida en el constructor
 builder.Services.AddTransient<IRepositorioProyectos, RepositorioProyectos>();
 
+builder.Services.AddTransient<ServicioTransitorio>();
+builder.Services.AddScoped<ServicioDelimitado>();
+builder.Services.AddSingleton<ServicioUnico>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
