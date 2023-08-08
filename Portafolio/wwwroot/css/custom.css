@@ -27,3 +27,27 @@
     margin: 1rem;
     padding: 1rem;
 }
+
+.skills {
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.stack {
+    border-radius: 10px;
+    box-shadow: 0 5px 5px 0 gray;
+}
+
+.stack h3 {
+    color: blue;
+    margin-top: 1rem;
+
+}
+
+.stack h4 {
+    margin-top: 2rem;
+}
+
+.encimar {
+    margin-top: -110px;
+}
