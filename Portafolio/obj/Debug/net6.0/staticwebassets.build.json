@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "i1a/N4wzRy6TDXuZ4ED7UCnOW1x1tHdkrnAzLyY6AB0=",
+  "Hash": "xGjAVR9FqKdYtJ1eM4aDmKqS7apWxHxQCzF8RbV4cu0=",
   "Source": "Portafolio",
   "BasePath": "_content/Portafolio",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\KC\\source\\repos\\Portafolio\\Portafolio\\wwwroot\\img\\empleados.png",
+      "SourceId": "Portafolio",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\KC\\source\\repos\\Portafolio\\Portafolio\\wwwroot\\",
+      "BasePath": "_content/Portafolio",
+      "RelativePath": "img/empleados.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\empleados.png"
     },
     {
       "Identity": "C:\\Users\\KC\\source\\repos\\Portafolio\\Portafolio\\wwwroot\\img\\gixxer.png",

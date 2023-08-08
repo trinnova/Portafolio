@@ -1,0 +1,47 @@
+﻿@{
+    string convertirMayusculas(string valor)
+    {
+        return valor.ToUpper();
+    }
+
+    DateTime hoy = DateTime.Now;
+
+    var nombres = new List<string>() { "Carlos", "Alex", "Gera" };
+}
+
+
+<div class="text-center">
+    <!-- <h1 class="display-4"> << Omar García >> </></h1> -->
+
+    <h1 class="display-4"> << @Model  @ViewBag.Nombre (@ViewBag.Edad) >> </></h1>
+    <h3> - Desarrollador Web - </h3>
+    <h4>Soy @Model.Nombre</h4>
+    <h5> @convertirMayusculas("Curso ASP.NET CORE") </h5>
+    <p>@hoy.ToString("dd/MM/yyyy hh:mm:ss")</p>
+
+    @foreach (var nombre in nombres)
+    {
+        <p>@nombre</p>
+    }
+
+    <img src="~/img/gixxer.png" alt="foto moto" class="logo" />
+
+    <div class="text-center">
+        <img src="~/img/empleados.png" alt="logo empleados" class="img-empleado" />
+    </div>
+
+    <div class="row justify-content-center text-center bg-primary">
+        <div class="col col-md-7 seccion-bienvenida">
+            <h1>Bienvenido a mi portafolio =)</h1>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                It has survived not only five centuries,
+                but also the leap into electronic typesetting, remaining essentially unchanged.
+                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+    </div>
+</div>

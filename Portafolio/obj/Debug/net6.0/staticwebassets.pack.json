@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\KC\\source\\repos\\Portafolio\\Portafolio\\wwwroot\\img\\empleados.png",
+      "PackagePath": "staticwebassets\\img\\empleados.png"
+    },
+    {
       "Id": "C:\\Users\\KC\\source\\repos\\Portafolio\\Portafolio\\wwwroot\\img\\gixxer.png",
       "PackagePath": "staticwebassets\\img\\gixxer.png"
     },
