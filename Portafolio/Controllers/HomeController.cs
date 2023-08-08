@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Portafolio.Models;
+using Portafolio.Servicios;
 using System.Diagnostics;
 
 namespace Portafolio.Controllers
@@ -16,7 +17,9 @@ namespace Portafolio.Controllers
         // Acciones: son las funciones que se ejecutan cuando hacemos una petición http
         public IActionResult Index()
         {
-            var proyectos = ObtenerProyectos().Take(3).ToList();
+            var repositorioProyectos = new RepositorioProyectos();
+
+            var proyectos = repositorioProyectos.ObtenerProyectos().Take(3).ToList();
 
             var modelo = new HomeIndex() { Proyectos = proyectos };
 
@@ -42,43 +45,6 @@ namespace Portafolio.Controllers
              * esto con la finalidad de encontrar el archivo y
              * lea en la vista 
             */
-        }
-
-        private List<Proyecto> ObtenerProyectos()
-        {
-            return new List<Proyecto>()
-            {
-                new Proyecto 
-                { 
-                    Titulo = "Amazon",
-                    Descripcion = "E-Commerce realizado en ASP.NET CORE",
-                    Link = "https://amazon.com",
-                    ImagenURL = "/img/amazon.png"
-                },
-
-                new Proyecto
-                {
-                    Titulo = "New York Times",
-                    Descripcion = "Página de noticias en REACT",
-                    Link = "https://nytimes.com",
-                    ImagenURL = "/img/nyt.png"
-                },
-
-                new Proyecto
-                {
-                    Titulo = "Reddit",
-                    Descripcion = "Red Social para compartir en comunidades",
-                    Link = "https://reddit.com",
-                    ImagenURL = "/img/reddit.png"
-                },
-                new Proyecto
-                {
-                    Titulo = "STEAM",
-                    Descripcion = "Tíenda en línea para comprar videojuegos",
-                    Link = "https://store.steampowered.com",
-                    ImagenURL = "/img/steam.webp"
-                }
-            };
         }
 
         public IActionResult Privacy()
