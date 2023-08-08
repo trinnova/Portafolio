@@ -1,10 +1,19 @@
-﻿@{
+﻿<!-- Utilizamos la clase Persona de Model -->
+@model Persona
+
+<!-- Con esto pasamos datos fuertemente tipados del controlador a la vista -->
+@*@model string*@
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4"> << Omar García >> @ViewBag.Nombre</></h1>
-    <p> - Desarrollador Web - </p>
+    <!-- <h1 class="display-4"> << Omar García >> </></h1> -->
+
+    <h1 class="display-4"> << @Model  @ViewBag.Nombre (@ViewBag.Edad) >> </></h1>
+    <h3> - Desarrollador Web - </h3>
+    <h4>Soy @Model.Nombre</h4>
 
     <img src="~/img/gixxer.png" alt="foto moto" class="logo"/>
 </div>

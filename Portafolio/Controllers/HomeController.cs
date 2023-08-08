@@ -16,9 +16,20 @@ namespace Portafolio.Controllers
         // Acciones: son las funciones que se ejecutan cuando hacemos una petición http
         public IActionResult Index()
         {
+            var persona = new Persona()
+            {
+                Nombre = "Heriberto",
+                Edad = 30
+            };
+
+            // Pasamos datos del controlador a la Vista
             ViewBag.Nombre = "OMAR GARCÍA";
 
-            return View();
+            ViewBag.Edad = 29;
+
+            // Lo usamos junto con el @model que esta en el Index.cshtml
+            //return View("Index", "Omar García");
+            return View(persona);
 
             /*
              * return View("Index2);
