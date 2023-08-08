@@ -13,9 +13,18 @@ namespace Portafolio.Controllers
             _logger = logger;
         }
 
+        // Acciones: son las funciones que se ejecutan cuando hacemos una petición http
         public IActionResult Index()
         {
             return View();
+
+            /*
+             * return View("Index2);
+             * Esto funciona si al archivo de la carpeta: Views
+             * index.cshtml, lo cambiamos a index2, 
+             * esto con la finalidad de encontrar el archivo y
+             * lea en la vista 
+            */
         }
 
         public IActionResult Privacy()
