@@ -5,7 +5,16 @@
 @*@model string*@
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
+
+    string convertirMayusculas(string valor)
+    {
+        return valor.ToUpper();
+    }
+
+    DateTime hoy = DateTime.Now;
+
+    var nombres = new List<string>() { "Carlos", "Alex", "Gera" };
 }
 
 <div class="text-center">
@@ -14,6 +23,13 @@
     <h1 class="display-4"> << @Model  @ViewBag.Nombre (@ViewBag.Edad) >> </></h1>
     <h3> - Desarrollador Web - </h3>
     <h4>Soy @Model.Nombre</h4>
+    <h5> @convertirMayusculas("Curso ASP.NET CORE") </h5>
+    <p>@hoy.ToString("dd/MM/yyyy hh:mm:ss")</p>
 
     <img src="~/img/gixxer.png" alt="foto moto" class="logo"/>
+
+    @foreach(var nombre in nombres)
+    {
+        <p>@nombre</p>
+    }
 </div>
