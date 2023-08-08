@@ -16,20 +16,24 @@ namespace Portafolio.Controllers
         // Acciones: son las funciones que se ejecutan cuando hacemos una petición http
         public IActionResult Index()
         {
-            var persona = new Persona()
-            {
-                Nombre = "Heriberto",
-                Edad = 30
-            };
+            var proyectos = ObtenerProyectos().Take(3).ToList();
 
-            // Pasamos datos del controlador a la Vista
-            ViewBag.Nombre = "OMAR GARCÍA";
+            var modelo = new HomeIndex() { Proyectos = proyectos };
 
-            ViewBag.Edad = 29;
+            //var persona = new Persona()
+            //{
+            //    Nombre = "Heriberto",
+            //    Edad = 30
+            //};
 
-            // Lo usamos junto con el @model que esta en el Index.cshtml
-            //return View("Index", "Omar García");
-            return View(persona);
+            //// Pasamos datos del controlador a la Vista
+            //ViewBag.Nombre = "OMAR GARCÍA";
+
+            //ViewBag.Edad = 29;
+
+            //// Lo usamos junto con el @model que esta en el Index.cshtml
+            ////return View("Index", "Omar García");
+            return View(modelo);
 
             /*
              * return View("Index2);
@@ -38,6 +42,43 @@ namespace Portafolio.Controllers
              * esto con la finalidad de encontrar el archivo y
              * lea en la vista 
             */
+        }
+
+        private List<Proyecto> ObtenerProyectos()
+        {
+            return new List<Proyecto>()
+            {
+                new Proyecto 
+                { 
+                    Titulo = "Amazon",
+                    Descripcion = "E-Commerce realizado en ASP.NET CORE",
+                    Link = "https://amazon.com",
+                    ImagenURL = "/img/amazon.png"
+                },
+
+                new Proyecto
+                {
+                    Titulo = "New York Times",
+                    Descripcion = "Página de noticias en REACT",
+                    Link = "https://nytimes.com",
+                    ImagenURL = "/img/nyt.png"
+                },
+
+                new Proyecto
+                {
+                    Titulo = "Reddit",
+                    Descripcion = "Red Social para compartir en comunidades",
+                    Link = "https://reddit.com",
+                    ImagenURL = "/img/reddit.png"
+                },
+                new Proyecto
+                {
+                    Titulo = "STEAM",
+                    Descripcion = "Tíenda en línea para comprar videojuegos",
+                    Link = "https://store.steampowered.com",
+                    ImagenURL = "/img/steam.webp"
+                }
+            };
         }
 
         public IActionResult Privacy()

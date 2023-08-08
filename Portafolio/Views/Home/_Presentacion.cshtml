@@ -1,4 +1,6 @@
-﻿@{
+﻿@*@{
+    ViewData["Title"] = "Inicio";
+
     string convertirMayusculas(string valor)
     {
         return valor.ToUpper();
@@ -8,21 +10,21 @@
 
     var nombres = new List<string>() { "Carlos", "Alex", "Gera" };
 }
-
+*@
 
 <div class="text-center">
-    <!-- <h1 class="display-4"> << Omar García >> </></h1> -->
+    <h1 class="display-4"> << Omar García >> </></h1>
 
-    <h1 class="display-4"> << @Model  @ViewBag.Nombre (@ViewBag.Edad) >> </></h1>
+@*    <h1 class="display-4"> << @Model  @ViewBag.Nombre (@ViewBag.Edad) >> </></h1>*@
     <h3> - Desarrollador Web - </h3>
-    <h4>Soy @Model.Nombre</h4>
+@*    <h4>Soy @Model.Nombre</h4>
     <h5> @convertirMayusculas("Curso ASP.NET CORE") </h5>
     <p>@hoy.ToString("dd/MM/yyyy hh:mm:ss")</p>
 
     @foreach (var nombre in nombres)
     {
         <p>@nombre</p>
-    }
+    }*@
 
     <img src="~/img/gixxer.png" alt="foto moto" class="logo" />
 
