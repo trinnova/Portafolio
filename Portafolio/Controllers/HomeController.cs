@@ -77,7 +77,7 @@ namespace Portafolio.Controllers
 
         public IActionResult Contacto()
         {
-            return View();
+            return View();  
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
