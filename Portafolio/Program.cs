@@ -13,6 +13,9 @@ builder.Services.AddTransient<ServicioTransitorio>();
 builder.Services.AddScoped<ServicioDelimitado>();
 builder.Services.AddSingleton<ServicioUnico>();
 
+// Para el correo
+builder.Services.AddTransient<IServicioEmail, ServicioEmailSendGrid>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
