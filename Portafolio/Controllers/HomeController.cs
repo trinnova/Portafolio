@@ -86,8 +86,9 @@ namespace Portafolio.Controllers
         //Atributo
         [HttpPost]
 
-        public IActionResult Contacto(ContactoViewModel contactoViewModel)
+        public async Task<IActionResult> Contacto(ContactoViewModel contactoViewModel)
         {
+            await servicioEmail.Enviar(contactoViewModel);
             return RedirectToAction("Gracias");
         }
 
