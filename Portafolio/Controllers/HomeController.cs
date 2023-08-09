@@ -73,11 +73,27 @@ namespace Portafolio.Controllers
         {
             var proyectos = repositorioProyectos.ObtenerProyectos();
             return View(proyectos);
-        }   
+        }
+
+        //Atributo
+        [HttpGet]
 
         public IActionResult Contacto()
         {
             return View();  
+        }
+
+        //Atributo
+        [HttpPost]
+
+        public IActionResult Contacto(ContactoViewModel contactoViewModel)
+        {
+            return RedirectToAction("Gracias");
+        }
+
+        public IActionResult Gracias()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
